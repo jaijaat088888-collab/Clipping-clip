@@ -1,0 +1,9 @@
+{
+  "name": "Clip Katarnak",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y ffmpeg && pip install -r requirements.txt",
+  "postAttachCommand": "nohup python app.py > server.log 2>&1 &",
+  "containerEnv": { "HOST": "0.0.0.0", "PORT": "5000" },
+  "forwardPorts": [5000],
+  "portsAttributes": { "5000": { "label": "Clip Katarnak", "onAutoForward": "openBrowser" } }
+}
